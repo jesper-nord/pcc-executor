@@ -22,6 +22,10 @@ for line in lines:
     enabled = split[1] == 'true'
     if hour == now_hour:
         arg = '-on' if enabled else '-off'
-        print("go-pcc -device {} -config {} {}".format(args.device, args.config_location, arg))
-        #os.system("go-pcc -device {} -config {} {}".format(device, configLocation, arg))
-        break
+        cmd = "go-pcc -device {} -config {} {}".format(args.device, args.config_location, arg)
+        print(cmd)
+        os.system(cmd)
+        exit(0)
+
+print("unable to find hour {} in file {}".format(now_hour, input_file_name))
+exit(1)
