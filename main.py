@@ -10,7 +10,7 @@ parser.add_argument("config_location", help="location of pcc config")
 args = parser.parse_args()
 
 now = datetime.now()
-input_file_name = "pccplanner.{}".format(now.strftime("%Y-%m-%d"))
+input_file_name = "pccplan.{}.tsv".format(now.strftime("%Y-%m-%d"))
 
 file = open("{}/{}".format(args.input_dir, input_file_name), 'r')
 lines = file.readlines()
